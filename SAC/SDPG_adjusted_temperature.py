@@ -4,8 +4,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 import math
-# Soft Actor-Critic Algorithms and Applications
-# https://arxiv.org/abs/1812.05905
+
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
