@@ -16,10 +16,10 @@ import numpy as np
 # from SAC import SAC_adjusted_temperature
 from SAC import SDPG_adjusted_temperature
 # -------------------------------
-from utils import replay_buffer
+import replay_buffer
 # Tag loggers
-from spinupUtils.logx import EpochLogger
-from spinupUtils.run_utils import setup_logger_kwargs
+from logx import EpochLogger
+from logx import setup_logger_kwargs
 
 def _agent(policy, eval_env, seed, logger, eval_episodes=10):
 	for _ in range(eval_episodes):
