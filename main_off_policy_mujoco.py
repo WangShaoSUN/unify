@@ -79,7 +79,6 @@ if __name__ == "__main__":
 	max_action = float(env.action_space.high[0])
 
 	kwargs = {
-		"seed":args.seed,
 		"state_dim": state_dim,
 		"action_dim": action_dim,
 		"max_action": max_action,
@@ -119,7 +118,8 @@ if __name__ == "__main__":
 		if not os.path.exists(f"./models/{policy_file}"):
 			assert f"The loading model path of `../models/{policy_file}` does not exist! "
 		policy.load(f"./models/{policy_file}")
-
+		
+	kwargs["seed"]=args.seed
 	# Setup loggers
 	logdir = './data/'+'%s'%args.policy+'"/%s' % args.env + '/%i' % int(time.time())
 	if  not os.path.exists(logdir):
