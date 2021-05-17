@@ -133,7 +133,7 @@ class SDPG_adjust_temp(object):
 
 		self.epsilon_start = 0.5
 		self.epsilon_final = 0.01
-		self.epsilon_decay = 20000
+		self.epsilon_decay = 1000
 	@property
 	def alpha(self):
 		return self.log_alpha.exp()
