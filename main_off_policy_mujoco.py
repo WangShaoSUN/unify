@@ -79,6 +79,7 @@ if __name__ == "__main__":
 	max_action = float(env.action_space.high[0])
 
 	kwargs = {
+		"seed":args.seed,
 		"state_dim": state_dim,
 		"action_dim": action_dim,
 		"max_action": max_action,
@@ -106,6 +107,7 @@ if __name__ == "__main__":
 		policy = SAC_adjusted_temperature.SAC(**kwargs)
 	elif args.policy =='SDPG':
 		policy = SDPG_adjusted_temperature.SDPG_adjust_temp(**kwargs)
+		kwargs["epsilon_decay"]=policy.epsilon_decay
 	else:
 		raise ValueError(f"Invalid Policy: {args.policy}!")
 
